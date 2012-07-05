@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './block_stack'
+require 'block_stack'
 
 class TestBlockStack < MiniTest::Unit::TestCase
   def setup
