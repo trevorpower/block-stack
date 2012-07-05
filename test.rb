@@ -31,4 +31,13 @@ class TestBlockStack < MiniTest::Unit::TestCase
 
     assert_equal '{<middle>}', @blocks.peek('mid')
   end
+
+  def test_that_stack_is_not_empty_after_insertion
+    @blocks << proc do 
+      'test'
+    end
+
+    assert_equal false, @blocks.empty?
+    assert_equal 'test', @blocks.peek
+  end
 end

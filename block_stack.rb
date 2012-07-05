@@ -28,6 +28,10 @@ class BlockStack
     @blocks = BlockStackElement.new(@blocks, &block)
   end
 
+  def << block
+    push &block
+  end
+
   def pop
     @blocks.pop
   end
