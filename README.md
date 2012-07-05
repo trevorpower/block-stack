@@ -1,5 +1,7 @@
-bricks
-======
-Experimental data structure or flow control.
+block-stack
+===========
 
-An attempt to reproduce the expressiveness of 'super' or 'yield' in a chain of blocks.
+Experimental stack like structure for chainging blocks.
+
+This is an attempt to reproduce the expressiveness of 'super' or 'yield'
+in a chain of blocks with the requirement of using modules or heavy nesting.
