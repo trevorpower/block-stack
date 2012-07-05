@@ -1,6 +1,6 @@
 class BlockStack
 
-  class BlockStackElement
+  class Element
 
     attr_accessor :default_args
 
@@ -25,7 +25,7 @@ class BlockStack
   end
 
   def push &block
-    @blocks = BlockStackElement.new(@blocks, &block)
+    @blocks = Element.new(@blocks, &block)
   end
 
   def << block
