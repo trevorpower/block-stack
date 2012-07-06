@@ -26,7 +26,7 @@ class TestBlockStack < MiniTest::Unit::TestCase
   def test_that_stack_chain_is_executed_correctly_with_param
     @blocks.push { |a| a }
     @blocks.push { peek! }
-    @blocks.push { |a| "<#{peek a + 'dle'}>" }
+    @blocks.push { |a| "<#{peek(a) + 'dle'}>" }
     @blocks.push { "{#{peek!}}" }
 
     assert_equal '{<middle>}', @blocks.peek('mid')
@@ -39,5 +39,15 @@ class TestBlockStack < MiniTest::Unit::TestCase
 
     assert_equal false, @blocks.empty?
     assert_equal 'test', @blocks.peek
+  end
+
+  def dummy
+    'dummy'
+  end
+
+  def test_that_instance_methods_are_available
+    @blocks.push { dummy }
+
+    assert_equal 'dummy', @blocks.peek
   end
 end
